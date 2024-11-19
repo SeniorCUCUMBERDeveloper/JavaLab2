@@ -1,6 +1,6 @@
 package User;
 
-import java.util.Objects;
+
 
 public class User{
     private int id;
@@ -53,23 +53,6 @@ public class User{
         }
         User user = (User) o;
         return id == user.id;
-    }
-
-    public int compareTo(User other, String compare){
-        switch(compare){
-            case "id":
-                return Integer.compare(this.id, other.id);
-            case "firstname":
-            return Objects.compare(this.firstname, other.firstname, String::compareTo);
-            case "lastname":
-            return Objects.compare(this.lastname, other.lastname, String::compareTo);
-            case "age":
-                return Integer.compare(this.age, other.age);
-            case "country":
-                return Objects.compare(this.country, other.country, String::compareTo); 
-            default:
-                throw new IllegalArgumentException("Invalid comparison field");
-        }
     }
 
 }
